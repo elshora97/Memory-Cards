@@ -28,6 +28,7 @@ h1 button {
 }
 
 .btn {
+    cursor: pointer;
     background-color: #fff;
     border: 1px solid #aaa;
     border-radius: 3px;
@@ -69,7 +70,7 @@ h1 button {
     font-size: 1.5em;
     opacity: 0;
     transform: translateX(50%) rotateY(-10deg);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease , opacity 0.4s ease;
 }
 
 .card.active {
@@ -90,7 +91,7 @@ h1 button {
     border-radius: 4px;
     position: relative;
     transform-style: preserve-3d;
-    transition: tramsform 0.4s ease;
+    transition: tramsform .4s ease;
 }
 
 .card.show-answer .inner-card {
@@ -129,4 +130,59 @@ h1 button {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.navigation {
+    display: flex;
+    margin: 20px 0;
+}
+
+.navigation .nav-button {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.navigation p{
+    margin: 0 25px;
+}
+
+.add-container {
+    opacity: 0; 
+    z-index: -1;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.add-container.show {
+    opacity: 1;
+    z-index: 2;
+}
+
+.add-container h3 {
+    margin: 10px 0;
+}
+
+.form-group label {
+    display: block;
+    margin: 20px 0 10px;
+}
+
+.form-group textarea {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 12px;
+    width: 500px;
+    max-width: 100%;
 }
